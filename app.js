@@ -65,6 +65,7 @@ app.get("/", function (req, res) {
 app.get("/:topic", function (req, res) {
 
     const customList = _.capitalize(req.params.topic);
+    console.log(req.params);
     List.findOne({ name: customList }, function (err, lists) {
         if (!err) {
             if (!lists) {
